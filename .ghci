@@ -1,0 +1,4 @@
+:set -fwarn-unused-imports -fno-warn-name-shadowing -fno-warn-missing-signatures -fno-warn-unused-matches  -fno-warn-type-defaults 
+:set -isrc
+--:load implicitConfigurationFirstPart.hs
+:load app/Main.hs
