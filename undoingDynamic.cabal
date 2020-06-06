@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1a0d9289b43a0e311368ace82dddbb9f7c7e9daceff22dfd228844e022176fb6
+-- hash: c729229e18c35c55f8a807f767afbf554b399281ea4d9c3b580213c728b9522f
 
 name:           undoingDynamic
 version:        0.1.0.0
@@ -29,6 +29,7 @@ library
   exposed-modules:
       EP
       Lib
+      TC
       Types
   other-modules:
       Paths_undoingDynamic

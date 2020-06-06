@@ -45,6 +45,7 @@ interpret (e,static) = case e of
              in on & maybe (\dynamic -> lookupb s)
                            (\n -> \dynamic -> dynamic !! n) -- qui sera celle de la valeur
    EI n -> (\dynamic -> UI n)
+   EB b -> (\dynamic -> UB b)
    ES s -> (\dynamic -> US s)
    EApp e1 e2  -> let s1 = interpret (e1,static)
                       s2 = interpret (e2,static)
@@ -65,7 +66,7 @@ interpret (e,static) = case e of
                      in \dynamic -> UF $ \v -> sebody (v:dynamic) -- la valeur de x sera en 1e position sur la pile
                                                                   -- la fonction construite depend elle meme d'autres
                                                                   -- variables
-   ELetfun f x e1 e2 -> -- letrec f x = e1 in e2
+   ELetFun f x e1 e2 -> -- letrec f x = e1 in e2
                     let s1 = interpret (e1, x:f:static)
                         s2 = interpret (e2,f:static)
                     in \dynamic -> let g v = s1 (v:UF(g):dynamic) -- g a acces a g

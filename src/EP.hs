@@ -4,6 +4,7 @@ module EP(EP, unit, bool, int, string, (**), (-->), embed, project) where
 import Prelude hiding ((**))
 import Types
 
+
 data EP a = EP { embed :: a -> U, project :: U -> a }
 
 unit :: EP ()
